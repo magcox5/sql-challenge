@@ -59,3 +59,20 @@ SELECT last_name AS "Last Name", COUNT(last_name) AS "Total"
 FROM employees
 GROUP BY "Last Name"
 ORDER BY "Total" DESC;
+
+-- Part of bonus question....
+-- Look up employee details for employee #499942
+SELECT e.emp_no, e.first_name, e.last_name, e.hire_date
+FROM employees e
+WHERE e.emp_no = 499942;
+-- Query returns employee name of April Foolsday
+
+SELECT * FROM salaries WHERE emp_no = 499942;
+-- Query returns that this employee is only paid from 3-28-1998 to 3-28-1999
+
+SELECT s.salary, t.title, s.from_date, s.to_date 
+FROM salaries s 
+INNER JOIN titles t ON s.emp_no = t.emp_no AND s.from_date >= t.from_date AND s.to_date <= t.to_date
+WHERE t.emp_no = 499942;
+-- Query show that this employee was paid $40,000 as a Technique Leader
+

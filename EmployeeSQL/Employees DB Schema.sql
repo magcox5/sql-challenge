@@ -69,3 +69,27 @@ REFERENCES "employees" ("emp_no");
 ALTER TABLE "titles" ADD CONSTRAINT "fk_titles_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
+COPY departments
+FROM 'C:\Users\Public\Documents\Data\departments.csv'
+CSV HEADER;
+
+COPY dept_manager
+FROM 'C:\Users\Public\Documents\Data\dept_manager.csv'
+CSV HEADER;
+
+COPY employees
+FROM 'C:\Users\Public\Documents\Data\employees.csv'
+CSV HEADER;
+
+COPY dept_emp
+FROM 'C:\Users\Public\Documents\Data\dept_emp.csv'
+CSV HEADER;
+
+COPY salaries
+FROM 'C:\Users\Public\Documents\Data\salaries.csv'
+CSV HEADER;
+
+COPY titles
+FROM 'C:\Users\Public\Documents\Data\titles.csv'
+CSV HEADER;
+
